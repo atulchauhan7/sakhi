@@ -1,0 +1,214 @@
+<header class="site-header {% if section.settings.show_announcement %}has-announcement{% endif %}" data-header>
+<div class="site-header__inner">
+
+<div class="site-header__left">
+<button class="menu-toggle header-icon" aria-label="Menu" aria-expanded="false">
+<svg class="menu-toggle__open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+<line x1="4" y1="7" x2="20" y2="7"/>
+<line x1="4" y1="12" x2="20" y2="12"/>
+<line x1="4" y1="17" x2="14" y2="17"/>
+</svg>
+<svg class="menu-toggle__close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:none">
+<line x1="18" y1="6" x2="6" y2="18"/>
+<line x1="6" y1="6" x2="18" y2="18"/>
+</svg>
+</button>
+<button class="header-icon" data-search-trigger aria-label="Search">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+<circle cx="11" cy="11" r="8"/>
+<path d="M21 21l-4.35-4.35"/>
+</svg>
+</button>
+<a href="{{ routes.account_url }}" class="header-icon header-icon--desktop-only" aria-label="Account">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+<circle cx="12" cy="7" r="4"/>
+</svg>
+</a>
+</div>
+
+<div class="site-header__center">
+<a href="{{ routes.root_url }}" class="site-header__logo">
+{% if section.settings.logo != blank %}
+<img src="{{ section.settings.logo | image_url: width: 200 }}" alt="{{ shop.name | escape }}" loading="eager" width="200" height="40">
+{% else %}
+<span class="logo-text" data-logo-text>{{ shop.name }}</span>
+{% endif %}
+</a>
+</div>
+
+<div class="site-header__right">
+<button class="header-icon" data-wishlist-trigger aria-label="Wishlist">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+</svg>
+<span class="wishlist-count-badge" style="display:none;"></span>
+</button>
+<button class="header-icon" data-cart-trigger aria-label="Cart">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+<path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+<line x1="3" y1="6" x2="21" y2="6"/>
+<path d="M16 10a4 4 0 0 1-8 0"/>
+</svg>
+<span class="cart-count">{{ cart.item_count }}</span>
+</button>
+</div>
+
+</div>
+
+<div class="header-search" data-header-search>
+<div class="header-search__inner">
+<form action="{{ routes.search_url }}" method="get" role="search" class="header-search__form">
+<input type="hidden" name="type" value="product">
+<svg class="header-search__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+<input type="search" name="q" class="header-search__input" placeholder="Search for products..." autocomplete="off" aria-label="Search products">
+<button type="button" class="header-search__close" data-header-search-close aria-label="Close search">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+</button>
+</form>
+<div class="header-search__tags">
+<a href="{{ routes.search_url }}?q=anarkali+kurti&type=product" class="header-search__tag">Anarkali Kurti</a>
+<a href="{{ routes.search_url }}?q=cotton+kurti&type=product" class="header-search__tag">Cotton Kurti</a>
+<a href="{{ routes.search_url }}?q=palazzo+set&type=product" class="header-search__tag">Palazzo Set</a>
+<a href="{{ routes.search_url }}?q=party+wear&type=product" class="header-search__tag">Party Wear</a>
+<a href="{{ routes.search_url }}?q=new+arrivals&type=product" class="header-search__tag">New Arrivals</a>
+</div>
+</div>
+</div>
+
+<nav class="site-header__nav" role="navigation" aria-label="Main navigation">
+<div class="nav-mobile-header">
+<span class="nav-mobile-brand">{{ shop.name }}</span>
+<button class="nav-mobile-close" aria-label="Close menu" data-nav-close>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<line x1="18" y1="6" x2="6" y2="18"/>
+<line x1="6" y1="6" x2="18" y2="18"/>
+</svg>
+</button>
+</div>
+<div class="nav-mobile-links">
+{% for link in linklists[section.settings.menu].links %}
+<div class="nav-item">
+<a href="{{ link.url }}" class="site-header__nav-link {% if link.active %}active{% endif %}" {% if link.url contains '/collections/' %}data-nav-collection-handle="{{ link.url | split: '/collections/' | last | split: '?' | first | split: '/' | first }}"{% endif %} {% if link.links.size > 0 %}data-nav-parent="true" aria-expanded="false" onclick="event.preventDefault();event.stopPropagation();var ni=this.closest('.nav-item'),mg=ni.querySelector('.mega-menu');if(!mg)return;var wasOpen=ni.classList.contains('is-open');document.querySelectorAll('.nav-item').forEach(function(o){o.classList.remove('is-open');var m=o.querySelector('.mega-menu');if(m)m.classList.remove('open');var a=o.querySelector('.site-header__nav-link[data-nav-parent]');if(a)a.setAttribute('aria-expanded','false');var ar=o.querySelector('.nav-arrow');if(ar)ar.style.transform=''});if(!wasOpen){ni.classList.add('is-open');mg.classList.add('open');this.setAttribute('aria-expanded','true');var aw=this.querySelector('.nav-arrow');if(aw)aw.style.transform='rotate(180deg)'}"{% endif %}>
+<span class="nav-link__inner">
+<span class="nav-link__thumb" style="display:none"></span>
+<span class="nav-link__text">{{ link.title }}</span>
+</span>
+{% if link.links.size > 0 %}
+<svg class="nav-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+{% endif %}
+</a>
+{% if link.links.size > 0 %}
+<div class="mega-menu">
+<div class="mega-menu__grid">
+{% for child_link in link.links %}
+<div class="mega-menu__column">
+<a href="{{ child_link.url }}" class="mega-menu__column-title">{{ child_link.title }}</a>
+{% for grandchild in child_link.links %}
+<a href="{{ grandchild.url }}" class="mega-menu__link">{{ grandchild.title }}</a>
+{% endfor %}
+</div>
+{% endfor %}
+</div>
+</div>
+{% endif %}
+</div>
+{% endfor %}
+{% assign extra_menus = 'categories,shop-by-style' | split: ',' %}
+{% for menu_handle in extra_menus %}
+  {% assign extra_menu = linklists[menu_handle] %}
+  {% if extra_menu.links.size > 0 %}
+  <div class="nav-item">
+    <a href="#" class="site-header__nav-link" data-nav-parent="true" aria-expanded="false" onclick="event.preventDefault();event.stopPropagation();var ni=this.closest('.nav-item'),mg=ni.querySelector('.mega-menu');if(!mg)return;var wasOpen=ni.classList.contains('is-open');document.querySelectorAll('.nav-item').forEach(function(o){o.classList.remove('is-open');var m=o.querySelector('.mega-menu');if(m)m.classList.remove('open');var a=o.querySelector('.site-header__nav-link[data-nav-parent]');if(a)a.setAttribute('aria-expanded','false');var ar=o.querySelector('.nav-arrow');if(ar)ar.style.transform=''});if(!wasOpen){ni.classList.add('is-open');mg.classList.add('open');this.setAttribute('aria-expanded','true');var aw=this.querySelector('.nav-arrow');if(aw)aw.style.transform='rotate(180deg)'}">
+      <span class="nav-link__inner">
+        <span class="nav-link__text">{{ extra_menu.title }}</span>
+      </span>
+      <svg class="nav-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </a>
+    <div class="mega-menu">
+      <div class="mega-menu__grid">
+        {% for child_link in extra_menu.links %}
+        <div class="mega-menu__column">
+          <a href="{{ child_link.url }}" class="mega-menu__column-title">{{ child_link.title }}</a>
+          {% for grandchild in child_link.links %}
+          <a href="{{ grandchild.url }}" class="mega-menu__link">{{ grandchild.title }}</a>
+          {% endfor %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% endif %}
+{% endfor %}
+</div>
+<div class="nav-collections" id="nav-collections"></div>
+<div class="nav-mobile-footer">
+<a href="{{ routes.account_url }}" class="nav-mobile-footer__link">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+My Account
+</a>
+</div>
+</nav>
+<div class="nav-overlay" data-nav-overlay></div>
+
+<script>
+(function(){
+  var container=document.getElementById('nav-collections');
+  var navLinks=document.querySelectorAll('[data-nav-collection-handle]');
+  var handles=[];
+  var handleMap={};
+  {% for link in linklists[section.settings.menu].links %}
+    {% if link.url contains '/collections/' %}
+      handles.push({url:{{ link.url | json }},title:{{ link.title | json }},handle:{{ link.url | split: '/collections/' | last | split: '?' | first | split: '/' | first | json }}});
+    {% endif %}
+  {% endfor %}
+  if(!handles.length)return;
+
+  /* Bottom scroll tiles */
+  var scrollHtml='<div class="nav-collections__scroll">';
+  var loaded=0;
+  var total=handles.length;
+
+  function renderScroll(){
+    scrollHtml+='</div>';
+    if(container)container.innerHTML=scrollHtml;
+  }
+
+  handles.forEach(function(item){
+    if(!item.handle){loaded++;if(loaded>=total)renderScroll();return;}
+    fetch('/collections/'+encodeURIComponent(item.handle)+'.json')
+      .then(function(r){if(!r.ok)throw new Error(r.status);return r.json()})
+      .then(function(data){
+        var col=data.collection;
+        var img=col.image?col.image.src:null;
+        if(!img&&col.products&&col.products.length){
+          for(var i=0;i<col.products.length;i++){
+            if(col.products[i].images&&col.products[i].images.length){img=col.products[i].images[0].src;break;}
+          }
+        }
+        if(img){
+          /* Inject into nav link thumb */
+          var navLink=document.querySelector('[data-nav-collection-handle="'+item.handle+'"]');
+          if(navLink){
+            var thumb=navLink.querySelector('.nav-link__thumb');
+            if(thumb){thumb.innerHTML='<img src="'+img+'" alt="" width="40" height="40">';thumb.style.display='';}
+          }
+          /* Add to bottom scroll */
+          scrollHtml+='<a href="'+item.url+'" class="nav-collections__item">'
+            +'<div class="nav-collections__img-wrap">'
+            +'<img src="'+img+'" alt="'+col.title+'" loading="lazy" width="140" height="180">'
+            +'</div>'
+            +'<span class="nav-collections__label">'+col.title+'</span></a>';
+        }
+      })
+      .catch(function(){})
+      .finally(function(){loaded++;if(loaded>=total)renderScroll()});
+  });
+})();
+</script>
+
+</header>
+
+{% schema %}
+{"name":"Header","settings":[{"type":"image_picker","id":"logo","label":"Logo image"},{"type":"link_list","id":"menu","label":"Main menu","default":"main-menu"},{"type":"checkbox","id":"show_announcement","label":"Account for announcement bar height","default":true}]}
+{% endschema %}

@@ -1,0 +1,256 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "accent_color": "#b22066",
+    "accent_color_dark": "#b22066",
+    "text_color": "#1a1a1a",
+    "text_muted_color": "#888888",
+    "heading_color": "#1a1a1a",
+    "background_color": "#ffffff",
+    "surface_color": "#fafafa",
+    "border_color": "#d5d5d5",
+    "heading_font": "poppins_n6",
+    "body_font": "poppins_n4",
+    "container_width": "1440px",
+    "grid_gutter": "20px",
+    "section_spacing": 60,
+    "border_radius": 0,
+    "text_direction": "ltr",
+    "enable_animations": true,
+    "enable_custom_cursor": false,
+    "enable_newsletter_popup": false,
+    "whatsapp_number": "+916356405060",
+    "product_promo_enabled": true,
+    "product_promo_text": "Buy 2 Get 30% Off",
+    "product_promo_code": "SUMMER30",
+    "product_show_rating": true,
+    "product_delivery_min_days": 5,
+    "product_delivery_max_days": 7,
+    "product_tax_note": "incl. of all taxes",
+    "product_trust_1": "Free Shipping ₹999+",
+    "product_trust_2": "10-Day Returns",
+    "product_trust_3": "Secure Checkout",
+    "product_trust_4": "COD Available",
+    "product_show_share": true,
+    "favicon": "shopify://shop_images/LOGO_GULAAB_GALI_PNG_2.png",
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+          "show_announcement": true,
+          "text": "Summer Sale is live",
+          "link": ""
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "logo": "shopify://shop_images/LOGO_GULAAB_GALI_PNG_1.png",
+          "menu": "main-menu-1",
+          "show_announcement": true
+        }
+      },
+      "cart-drawer": {
+        "type": "cart-drawer",
+        "settings": {}
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "footer-0": {
+            "type": "menu",
+            "settings": {
+              "heading": "About us",
+              "menu": "footer"
+            }
+          },
+          "footer-1": {
+            "type": "menu",
+            "settings": {
+              "heading": "Our Company",
+              "menu": "footer"
+            }
+          },
+          "footer-2": {
+            "type": "menu",
+            "settings": {
+              "heading": "Quick Links",
+              "menu": "footer"
+            }
+          }
+        },
+        "block_order": [
+          "footer-0",
+          "footer-1",
+          "footer-2"
+        ],
+        "settings": {
+          "about_text": "",
+          "address_text": "G1-30, Apparel Park, Jagatpura, Jaipur, Rajasthan, 302017",
+          "whatsapp_number": "+916356405060",
+          "support_email": "gulaabgali.com@gmail.com"
+        }
+      },
+      "category-strip": {
+        "type": "category-strip",
+        "blocks": {
+          "category_xKCAMw": {
+            "type": "category",
+            "settings": {
+              "image": "shopify://shop_images/best_sellers2_copy.webp",
+              "label": "Best sellers",
+              "link": "shopify://collections/sabki-pasand"
+            }
+          },
+          "category_z63TCm": {
+            "type": "category",
+            "settings": {
+              "image": "shopify://shop_images/THE_GRACE.webp",
+              "label": "The Grace",
+              "link": "shopify://collections/the-grace"
+            }
+          },
+          "category_NFpbcV": {
+            "type": "category",
+            "settings": {
+              "image": "shopify://shop_images/THE_MUSE.webp",
+              "label": "The Muse",
+              "link": "shopify://collections/the-muse"
+            }
+          },
+          "category_A8zzmY": {
+            "type": "category",
+            "settings": {
+              "image": "shopify://shop_images/THE_SOUL.webp",
+              "label": "The Soul",
+              "link": "shopify://products/ethic-kurti"
+            }
+          },
+          "category_CNrpzp": {
+            "type": "category",
+            "settings": {
+              "image": "shopify://shop_images/THE_AURA.webp",
+              "label": "The aura",
+              "link": "shopify://collections/the-aura"
+            }
+          }
+        },
+        "block_order": [
+          "category_xKCAMw",
+          "category_z63TCm",
+          "category_NFpbcV",
+          "category_A8zzmY",
+          "category_CNrpzp"
+        ],
+        "settings": {}
+      }
+    },
+    "content_for_index": [],
+    "blocks": {
+      "16420725565331586169": {
+        "type": "shopify://apps/amazon-reviews-by-appio/blocks/integration/569167b3-e5d6-4314-9866-f51281b506d7",
+        "disabled": true,
+        "settings": {}
+      }
+    }
+  },
+  "presets": {
+    "BlueMnky": {
+      "accent_color": "#b22066",
+      "accent_color_dark": "#b22066",
+      "text_color": "#1a1a1a",
+      "text_muted_color": "#888888",
+      "heading_color": "#1a1a1a",
+      "background_color": "#ffffff",
+      "surface_color": "#fafafa",
+      "border_color": "#d5d5d5",
+      "heading_font": "poppins_n6",
+      "body_font": "poppins_n4",
+      "container_width": "1440px",
+      "grid_gutter": "20px",
+      "section_spacing": 60,
+      "border_radius": 0,
+      "text_direction": "ltr",
+      "enable_animations": true,
+      "enable_custom_cursor": false,
+      "enable_newsletter_popup": true,
+      "whatsapp_number": "+917743886611",
+      "product_show_rating": true,
+      "product_delivery_min_days": 5,
+      "product_delivery_max_days": 7,
+      "product_tax_note": "incl. of all taxes",
+      "product_trust_1": "Free Shipping ₹999+",
+      "product_trust_2": "10-Day Returns",
+      "product_trust_3": "Secure Checkout",
+      "product_trust_4": "COD Available",
+      "product_show_share": true,
+      "sections": {
+        "announcement-bar": {
+          "type": "announcement-bar",
+          "settings": {
+            "show_announcement": true,
+            "text": "Coming Soon....",
+            "link": ""
+          }
+        },
+        "header": {
+          "type": "header",
+          "settings": {
+            "menu": "main-menu",
+            "show_announcement": true
+          }
+        },
+        "cart-drawer": {
+          "type": "cart-drawer",
+          "settings": {}
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "footer-0": {
+              "type": "menu",
+              "settings": {
+                "heading": "Customer Care",
+                "menu": "footer"
+              }
+            },
+            "footer-1": {
+              "type": "menu",
+              "settings": {
+                "heading": "Our Company",
+                "menu": "footer"
+              }
+            },
+            "footer-2": {
+              "type": "menu",
+              "settings": {
+                "heading": "Quick Links",
+                "menu": "footer"
+              }
+            }
+          },
+          "block_order": [
+            "footer-0",
+            "footer-1",
+            "footer-2"
+          ],
+          "settings": {
+            "about_text": "Jolliet Group — we curate premium products for those who appreciate quality, craftsmanship, and timeless design.",
+            "address_text": "",
+            "whatsapp_number": "+917743886611",
+            "support_email": "support@jolliet.in"
+          }
+        }
+      },
+      "content_for_index": []
+    }
+  }
+}
