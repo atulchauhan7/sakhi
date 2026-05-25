@@ -66,38 +66,38 @@
       "footer": {
         "type": "footer",
         "blocks": {
-          "footer-0": {
-            "type": "menu",
-            "settings": {
-              "heading": "About us",
-              "menu": "footer"
-            }
+          "quick_link_1": {
+            "type": "quick_link",
+            "settings": {"link_label": "Search", "link_url": "/search"}
           },
-          "footer-1": {
-            "type": "menu",
-            "settings": {
-              "heading": "Our Company",
-              "menu": "footer"
-            }
+          "quick_link_2": {
+            "type": "quick_link",
+            "settings": {"link_label": "Contact Us", "link_url": "/pages/contact-us"}
           },
-          "footer-2": {
-            "type": "menu",
-            "settings": {
-              "heading": "Quick Links",
-              "menu": "footer"
-            }
+          "quick_link_3": {
+            "type": "quick_link",
+            "settings": {"link_label": "Privacy Policy", "link_url": "/pages/privacy-policy"}
+          },
+          "quick_link_4": {
+            "type": "quick_link",
+            "settings": {"link_label": "Return and Exchange Policy", "link_url": "/pages/return-and-exchange-policy"}
+          },
+          "quick_link_5": {
+            "type": "quick_link",
+            "settings": {"link_label": "Shipping Policy", "link_url": "/pages/shipping-policy"}
+          },
+          "quick_link_6": {
+            "type": "quick_link",
+            "settings": {"link_label": "Terms and Conditions", "link_url": "/pages/terms-and-conditions"}
           }
         },
-        "block_order": [
-          "footer-0",
-          "footer-1",
-          "footer-2"
-        ],
+        "block_order": ["quick_link_1","quick_link_2","quick_link_3","quick_link_4","quick_link_5","quick_link_6"],
         "settings": {
           "about_text": "",
           "address_text": "G1-30, Apparel Park, Jagatpura, Jaipur, Rajasthan, 302017",
-          "whatsapp_number": "",
-          "support_email": "sakhiyaan.com@gmail.com"
+          "whatsapp_number": "+919166881552",
+          "support_email": "sakhiyaan.com@gmail.com",
+          "quick_links_heading": "Quick Links"
         }
       },
       "category-strip": {
@@ -210,39 +210,14 @@
         },
         "footer": {
           "type": "footer",
-          "blocks": {
-            "footer-0": {
-              "type": "menu",
-              "settings": {
-                "heading": "Customer Care",
-                "menu": "footer"
-              }
-            },
-            "footer-1": {
-              "type": "menu",
-              "settings": {
-                "heading": "Our Company",
-                "menu": "footer"
-              }
-            },
-            "footer-2": {
-              "type": "menu",
-              "settings": {
-                "heading": "Quick Links",
-                "menu": "footer"
-              }
-            }
-          },
-          "block_order": [
-            "footer-0",
-            "footer-1",
-            "footer-2"
-          ],
+          "blocks": {},
+          "block_order": [],
           "settings": {
             "about_text": "Jolliet Group — we curate premium products for those who appreciate quality, craftsmanship, and timeless design.",
             "address_text": "",
             "whatsapp_number": "+917743886611",
-            "support_email": "support@jolliet.in"
+            "support_email": "support@jolliet.in",
+            "quick_links_heading": "Quick Links"
           }
         }
       },
