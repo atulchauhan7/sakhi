@@ -68,30 +68,55 @@
         "blocks": {
           "quick_link_1": {
             "type": "quick_link",
-            "settings": {"link_label": "Search", "link_url": "/search"}
+            "settings": {
+              "link_label": "Search",
+              "link_url": "/search"
+            }
           },
           "quick_link_2": {
             "type": "quick_link",
-            "settings": {"link_label": "Contact Us", "link_url": "/pages/contact-us"}
+            "settings": {
+              "link_label": "Contact Us",
+              "link_url": "/pages/contact"
+            }
           },
           "quick_link_3": {
             "type": "quick_link",
-            "settings": {"link_label": "Privacy Policy", "link_url": "/pages/privacy-policy"}
+            "settings": {
+              "link_label": "Privacy Policy",
+              "link_url": "/pages/privacy-policy"
+            }
           },
           "quick_link_4": {
             "type": "quick_link",
-            "settings": {"link_label": "Return and Exchange Policy", "link_url": "/pages/return-and-exchange-policy"}
+            "settings": {
+              "link_label": "Return and Exchange Policy",
+              "link_url": "shopify://pages/return-exchanges-and-refunds"
+            }
           },
           "quick_link_5": {
             "type": "quick_link",
-            "settings": {"link_label": "Shipping Policy", "link_url": "/pages/shipping-policy"}
+            "settings": {
+              "link_label": "Shipping Policy",
+              "link_url": "shopify://pages/shipping-policy"
+            }
           },
           "quick_link_6": {
             "type": "quick_link",
-            "settings": {"link_label": "Terms and Conditions", "link_url": "/pages/terms-and-conditions"}
+            "settings": {
+              "link_label": "Terms and Conditions",
+              "link_url": "shopify://pages/terms-of-services"
+            }
           }
         },
-        "block_order": ["quick_link_1","quick_link_2","quick_link_3","quick_link_4","quick_link_5","quick_link_6"],
+        "block_order": [
+          "quick_link_1",
+          "quick_link_2",
+          "quick_link_3",
+          "quick_link_4",
+          "quick_link_5",
+          "quick_link_6"
+        ],
         "settings": {
           "about_text": "",
           "address_text": "G1-30, Apparel Park, Jagatpura, Jaipur, Rajasthan, 302017",
@@ -210,8 +235,6 @@
         },
         "footer": {
           "type": "footer",
-          "blocks": {},
-          "block_order": [],
           "settings": {
             "about_text": "Jolliet Group — we curate premium products for those who appreciate quality, craftsmanship, and timeless design.",
             "address_text": "",
