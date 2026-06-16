@@ -380,7 +380,7 @@
 .category-strip__item:hover{transform:translateY(-4px)}
 .category-strip__item:focus-visible{outline:2px solid var(--color-accent);outline-offset:4px;border-radius:50%}
 /* Category image — CIRCULAR like Bewakoof, with accent ring on hover */
-.category-strip__img-wrap{width:100%;aspect-ratio:1/1;border-radius:50%;overflow:hidden;flex-shrink:0;border:2.5px solid var(--color-border,#d5d5d5);background:var(--color-surface,#fafafa);box-shadow:0 2px 10px rgba(0,0,0,0.08);transition:border-color 0.25s,box-shadow 0.25s var(--ease-out-expo),transform 0.22s var(--ease-out-expo)}
+.category-strip__img-wrap{width:100%;aspect-ratio:1/1;border-radius:50%;overflow:hidden;flex-shrink:0;border:2px solid var(--color-border,#ededed);background:var(--color-surface,#fafafa);box-shadow:var(--shadow-sm);transition:border-color 0.25s,box-shadow 0.25s var(--ease-out-expo),transform 0.22s var(--ease-out-expo)}
 .category-strip__item:hover .category-strip__img-wrap,.category-strip__item:focus-visible .category-strip__img-wrap{border-color:var(--color-accent);box-shadow:0 0 0 3px rgba(var(--color-accent-rgb),0.15),0 6px 20px rgba(var(--color-accent-rgb),0.2);transform:scale(1.08)}
 .category-strip__img-wrap img,.category-strip__img-wrap svg{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.3s var(--ease-out-expo)}
 .category-strip__item:hover .category-strip__img-wrap img{transform:scale(1.12)}

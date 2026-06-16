@@ -210,10 +210,10 @@
   --bwk-muted:#878787;
   --bwk-green:#1fa552;
   --bwk-sale:#ee4d37;
-  --bwk-border:#f0f0f0;
-  --bwk-radius:4px;
-  --bwk-btn-radius:4px;
-  --bwk-pill-radius:24px;
+  --bwk-border:#ededed;
+  --bwk-radius:10px;
+  --bwk-btn-radius:10px;
+  --bwk-pill-radius:999px;
 
   /* Override theme tokens */
   --color-heading:#1d1b1b;
@@ -532,12 +532,12 @@ body,button,input,select,textarea,h1,h2,h3,h4,h5,h6{
   --bwk-dark:#282c3f;
   --bwk-muted:#94969f;
   --bwk-border:#eaeaec;
-  --bwk-surface:#f5f5f6;
+  --bwk-surface:#f7f6f4;
   --bwk-green:#03a685;
   --bwk-price-off:#ff6b35;
   --bwk-star:#ff9f00;
-  --bwk-radius:4px;
-  --bwk-shadow:0 2px 16px rgba(40,44,63,0.07);
+  --bwk-radius:10px;
+  --bwk-shadow:0 8px 24px rgba(40,44,63,0.08);
 }
 
 /* ---- GLOBAL ---- */
@@ -647,7 +647,8 @@ a{color:inherit}
 /* Quick add — static, always visible button in the card flow (no hover-reveal) */
 .product-card__quick-add{position:static!important;transform:none!important;opacity:1!important;pointer-events:auto!important}
 .product-card:hover .product-card__quick-add{transform:none!important;opacity:1!important}
-.product-card__quick-add-btn{width:100%!important;padding:10px 0!important;background:var(--color-accent)!important;color:#fff!important;border:none!important;border-radius:8px!important;font-size:0.65rem!important;font-weight:800!important;text-transform:uppercase!important;letter-spacing:0.08em!important;text-indent:0.08em!important;cursor:pointer!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:6px!important;font-family:inherit!important;transition:background 0.15s!important}
+.product-card__quick-add-btn{width:100%!important;padding:10px 0!important;background:var(--color-accent)!important;color:#fff!important;border:none!important;border-radius:var(--bwk-btn-radius)!important;font-size:0.65rem!important;font-weight:800!important;text-transform:uppercase!important;letter-spacing:0.08em!important;text-indent:0.08em!important;cursor:pointer!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:6px!important;font-family:inherit!important;transition:background 0.15s,transform 0.15s!important}
+.product-card__quick-add-btn:active{transform:scale(0.97)!important}
 .product-card__quick-add-btn:hover{background:var(--color-accent-dark)!important}
 .product-card__quick-add-btn svg{width:13px!important;height:13px!important;stroke:#fff!important}
 
@@ -709,7 +710,7 @@ a{color:inherit}
 .btn--full{width:100%!important;display:block!important;text-align:center!important}
 
 /* ---- COLLECTION PAGE ---- */
-.collection-page{padding:0 0 3rem!important}
+.collection-page{padding:0 0 1.25rem!important}
 .collection-breadcrumbs{font-size:0.68rem!important;color:var(--bwk-muted)!important;padding:12px 0 8px!important;display:flex!important;align-items:center!important;gap:4px!important;flex-wrap:wrap!important}
 .collection-breadcrumbs a{color:var(--bwk-muted)!important;text-decoration:none!important}
 .collection-breadcrumbs a:hover{color:var(--bwk-dark)!important}
@@ -893,8 +894,8 @@ a{color:inherit}
 /* ---- HERO SLIDER ---- */
 .hero-slide__subtitle{font-size:0.68rem!important;font-weight:800!important;text-transform:uppercase!important;letter-spacing:0.22em!important;color:rgba(255,255,255,0.88)!important;background:rgba(255,255,255,0.15)!important;padding:4px 14px!important;border-radius:20px!important;display:inline-block!important;margin-bottom:12px!important;backdrop-filter:blur(4px)!important}
 .hero-slide__title{font-size:clamp(2rem,6vw,4rem)!important;font-weight:900!important;color:#fff!important;text-transform:uppercase!important;letter-spacing:0.04em!important;line-height:1.05!important;text-shadow:0 2px 12px rgba(0,0,0,0.22)!important}
-.hero-slide__btn{background:#fff!important;color:var(--bwk-dark)!important;border-radius:0!important;font-size:0.72rem!important;font-weight:800!important;letter-spacing:0.14em!important;text-transform:uppercase!important;padding:10px 22px!important;display:inline-flex!important;align-items:center!important;gap:8px!important;text-decoration:none!important;border:2px solid #fff!important;transition:all 0.2s!important;margin-top:24px!important}
-.hero-slide__btn:hover{background:transparent!important;color:#fff!important}
+.hero-slide__btn{background:#fff!important;color:var(--bwk-dark)!important;border-radius:var(--bwk-pill-radius)!important;font-size:0.72rem!important;font-weight:800!important;letter-spacing:0.14em!important;text-transform:uppercase!important;padding:13px 30px!important;display:inline-flex!important;align-items:center!important;gap:8px!important;text-decoration:none!important;border:2px solid #fff!important;transition:all 0.25s var(--ease-out-expo)!important;margin-top:24px!important;box-shadow:0 8px 24px rgba(0,0,0,0.18)!important}
+.hero-slide__btn:hover{background:transparent!important;color:#fff!important;transform:translateY(-2px)!important}
 .hero-slider__arrow{background:rgba(255,255,255,0.9)!important;color:var(--bwk-dark)!important;width:38px!important;height:38px!important;border-radius:50%!important;box-shadow:0 2px 8px rgba(0,0,0,0.12)!important}
 .hero-slider__arrow:hover{background:#fff!important}
 .hero-slider__dot{width:28px!important;height:3px!important;border-radius:2px!important;background:rgba(255,255,255,0.4)!important;border:none!important;padding:0!important;cursor:pointer!important;transition:width 0.35s ease,background 0.35s ease!important}
@@ -943,7 +944,7 @@ a{color:inherit}
 .scrolling-text__sep{color:rgba(255,255,255,0.4)!important}
 
 /* ---- PAGINATION ---- */
-.pagination{display:flex!important;justify-content:center!important;gap:5px!important;padding:24px 0!important}
+.pagination{display:flex!important;justify-content:center!important;gap:6px!important;padding:28px 0 6px!important}
 .pagination a,.pagination span{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:36px!important;height:36px!important;border:1.5px solid var(--bwk-border)!important;border-radius:var(--bwk-radius)!important;font-size:0.76rem!important;font-weight:700!important;color:var(--bwk-dark)!important;text-decoration:none!important;transition:all 0.15s!important}
 .pagination a.current,.pagination span.current,.pagination a:hover{background:var(--bwk-dark)!important;color:#fff!important;border-color:var(--bwk-dark)!important}
 
@@ -1675,10 +1676,7 @@ input:focus,textarea:focus,select:focus{outline:none!important;border-color:var(
 .site-footer__bottom a:hover{color:#fff!important}
 .site-footer__social a,.site-footer .social-icon{color:rgba(255,255,255,0.7)!important;border:1px solid rgba(255,255,255,0.15)!important;border-radius:50%!important;width:38px!important;height:38px!important;display:inline-flex!important;align-items:center;justify-content:center;transition:all 0.25s!important}
 .site-footer__social a:hover,.site-footer .social-icon:hover{background:#fff!important;color:#000!important;border-color:#fff!important;transform:translateY(-2px)}
-.footer-benefits{background:#0a0a0a!important;color:rgba(255,255,255,0.7)!important;border-bottom:1px solid rgba(255,255,255,0.06)!important;padding:1.75rem 0!important}
-.footer-benefit__icon{color:#fff!important}
-.footer-benefit__text strong{color:#fff!important}
-.footer-benefit__text span{color:rgba(255,255,255,0.5)!important}
+/* (legacy dark footer-benefits rules removed — see authoritative block at end of file) */
 
 /* ---- 9.4 BOTTOM NAV — search button matches link styling ---- */
 button.bottom-nav__item{background:none!important;border:none!important;cursor:pointer!important;font-family:inherit!important}
@@ -1700,7 +1698,7 @@ button.bottom-nav__item{background:none!important;border:none!important;cursor:p
 .form-footer{font-size:0.85rem!important;margin-top:1.5rem!important;color:#878787!important}
 .form-footer a{color:#1d1b1b!important;font-weight:600!important;text-decoration:none}
 .form-footer a:hover{text-decoration:underline}
-#customer-login .btn--primary,#customer-register .btn--primary,#recover-password .btn--primary{height:50px!important;font-size:0.84rem!important;letter-spacing:0.12em!important;border-radius:8px!important;background:#1d1b1b!important;color:#fff!important;font-weight:600!important;transition:transform 0.15s,background 0.2s!important}
+#customer-login .btn--primary,#customer-register .btn--primary,#recover-password .btn--primary{height:50px!important;font-size:0.84rem!important;letter-spacing:0.12em!important;border-radius:var(--bwk-btn-radius)!important;background:#1d1b1b!important;color:#fff!important;font-weight:600!important;transition:transform 0.15s,background 0.2s!important}
 #customer-login .btn--primary:hover,#customer-register .btn--primary:hover{background:#000!important;transform:translateY(-1px)}
 .form-alert{border-radius:8px!important;font-size:0.84rem!important;padding:0.875rem 1rem!important}
 .form-alert--error{background:#fef2f2!important;color:#b91c1c!important;border:1px solid #fecaca!important}
@@ -1776,9 +1774,9 @@ button.bottom-nav__item{background:none!important;border:none!important;cursor:p
 .wishlist-drawer__empty{padding:3rem 2rem!important;text-align:center;color:#878787}
 .wishlist-drawer__empty svg{color:#d4d4d4!important;margin:0 auto 1rem!important;width:56px!important;height:56px!important}
 .wishlist-drawer__empty p{font-size:0.9rem!important;color:#424553!important;margin-bottom:1.25rem!important;font-weight:500}
-.wishlist-drawer__empty .btn{height:46px;padding:0 28px;border-radius:8px;font-size:0.78rem;letter-spacing:0.1em;background:#1d1b1b;color:#fff;font-weight:600}
+.wishlist-drawer__empty .btn{height:46px;padding:0 28px;border-radius:var(--bwk-btn-radius);font-size:0.78rem;letter-spacing:0.1em;background:#1d1b1b;color:#fff;font-weight:600}
 .wishlist-drawer__footer{padding:1rem 1.25rem!important;border-top:1px solid #ececec!important;background:#fff!important}
-.wishlist-drawer__footer .btn{border-radius:8px!important;height:48px!important;font-weight:600!important;letter-spacing:0.1em!important;font-size:0.78rem!important}
+.wishlist-drawer__footer .btn{border-radius:var(--bwk-btn-radius)!important;height:48px!important;font-weight:600!important;letter-spacing:0.1em!important;font-size:0.78rem!important}
 
 /* ---- 9.8 CART DRAWER — refined polish ---- */
 .cart-drawer__header{border-bottom:1px solid #ececec!important;padding:1.1rem 1.5rem!important;background:#fff!important}
@@ -1808,7 +1806,7 @@ button.bottom-nav__item{background:none!important;border:none!important;cursor:p
 .cart-drawer__footer{border-top:1px solid #ececec!important;padding:12px 16px 14px!important;background:#fff!important;box-shadow:0 -4px 20px rgba(0,0,0,0.04)!important}
 .cart-drawer__subtotal{font-size:0.9rem!important;color:#424553!important;font-weight:500!important;margin-bottom:10px!important;display:flex;justify-content:space-between;align-items:baseline}
 .cart-drawer__subtotal-price{font-size:1.15rem!important;font-weight:700!important;color:#1d1b1b!important}
-.cart-drawer__footer .btn{height:50px!important;border-radius:8px!important;font-size:0.84rem!important;letter-spacing:0.12em!important;font-weight:600!important;background:#1d1b1b!important;color:#fff!important;transition:all 0.2s!important}
+.cart-drawer__footer .btn{height:50px!important;border-radius:var(--bwk-btn-radius)!important;font-size:0.84rem!important;letter-spacing:0.12em!important;font-weight:600!important;background:#1d1b1b!important;color:#fff!important;transition:all 0.2s!important}
 .cart-drawer__footer .btn:hover{background:#000!important;transform:translateY(-1px)}
 /* Tighten post-checkout content — note and empty payment-icons row */
 .cart-drawer__note{font-size:0.68rem!important;color:#7e8290!important;text-align:center!important;margin:8px 0 0!important;line-height:1.4!important}
@@ -1823,7 +1821,7 @@ section + section{margin-top:0!important}
 /* Container alignment */
 .container{padding-left:clamp(16px,4vw,32px)!important;padding-right:clamp(16px,4vw,32px)!important}
 /* Buttons: consistent border-radius across site */
-.btn,.btn--primary,.btn--secondary{border-radius:8px!important;letter-spacing:0.1em!important;font-weight:600!important}
+.btn,.btn--primary,.btn--secondary{border-radius:var(--bwk-btn-radius)!important;letter-spacing:0.1em!important;font-weight:600!important}
 /* Optical-centering fix: letter-spacing adds trailing space after the last
    glyph, shifting centered icon+label content left of true centre. text-indent
    (an inherited property) nudges the text run back by the same amount so the
@@ -2696,26 +2694,7 @@ section + section{margin-top:0!important}
   font-weight:700!important;
 }
 
-/* ── 7. Footer benefits — accent icons, richer padding ───────── */
-.footer-benefit__icon{
-  width:50px!important;
-  height:50px!important;
-  border-radius:14px!important;
-  background:rgba(var(--color-accent-rgb),0.08)!important;
-  box-shadow:none!important;
-}
-.footer-benefit__text strong{
-  font-size:0.82rem!important;
-  font-weight:700!important;
-  letter-spacing:0.01em!important;
-}
-.footer-benefit__text span{
-  font-size:0.74rem!important;
-  color:var(--color-text-muted)!important;
-}
-.footer-benefit+.footer-benefit::before{
-  background:linear-gradient(to bottom, transparent, var(--color-border), transparent)!important;
-}
+/* ── 7. Footer benefits — see authoritative block at end of file ─ */
 
 /* ── 8. Product card image — bottom shadow gradient on hover ──── */
 .product-card__media::after{
@@ -3883,21 +3862,26 @@ select:focus-visible{
   background:#faf9f7!important;
   border-top:1px solid #ececec!important;
   border-bottom:1px solid #ececec!important;
-  padding:22px 0!important;
+  padding:20px 0!important;
 }
 .footer-benefits__grid{
-  display:grid!important;
-  grid-template-columns:repeat(var(--footer-benefit-count,4),minmax(0,1fr))!important;
-  gap:0!important;
+  display:flex!important;
+  flex-wrap:wrap!important;
+  justify-content:center!important;
   align-items:stretch!important;
+  gap:8px 0!important;
 }
 .footer-benefit{
   display:flex!important;
   align-items:center!important;
-  gap:13px!important;
-  padding:6px 24px!important;
+  justify-content:center!important;
+  gap:12px!important;
+  padding:8px 26px!important;
   position:relative!important;
   border:none!important;
+  background:transparent!important;
+  flex:1 1 0!important;
+  min-width:200px!important;
 }
 /* Vertical divider between items (desktop) */
 .footer-benefit + .footer-benefit::before{
@@ -3907,7 +3891,7 @@ select:focus-visible{
   top:50%!important;
   transform:translateY(-50%)!important;
   width:1px!important;
-  height:38px!important;
+  height:40px!important;
   background:#e6e4e0!important;
 }
 .footer-benefit__icon{
@@ -3917,6 +3901,7 @@ select:focus-visible{
   border-radius:12px!important;
   background:rgba(var(--color-accent-rgb),0.09)!important;
   box-shadow:none!important;
+  color:var(--color-accent)!important;
   display:flex!important;
   align-items:center!important;
   justify-content:center!important;
@@ -3927,11 +3912,20 @@ select:focus-visible{
   stroke:var(--color-accent)!important;
   color:var(--color-accent)!important;
 }
+/* Text: forced into a clean two-line stack; defensively kill any stray
+   inherited/legacy background so the labels never render in dark boxes. */
 .footer-benefit__text{
   display:flex!important;
   flex-direction:column!important;
+  justify-content:center!important;
   gap:2px!important;
   min-width:0!important;
+  background:transparent!important;
+}
+.footer-benefit__text strong,
+.footer-benefit__text span{
+  background:transparent!important;
+  white-space:normal!important;
 }
 .footer-benefit__text strong{
   font-size:0.8rem!important;
@@ -3939,7 +3933,7 @@ select:focus-visible{
   color:#1a1a1a!important;
   letter-spacing:0.01em!important;
   text-transform:none!important;
-  line-height:1.2!important;
+  line-height:1.25!important;
 }
 .footer-benefit__text span{
   font-size:0.72rem!important;
@@ -3947,24 +3941,23 @@ select:focus-visible{
   color:#7a7a7a!important;
   line-height:1.3!important;
 }
-/* Tablet: 2 columns */
+/* Tablet: two per row, drop the divider, comfortable padding */
 @media(max-width:1024px){
-  .footer-benefits__grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
-  /* Reset desktop dividers; add them only between the two columns */
+  .footer-benefit{flex:1 1 42%!important;min-width:240px!important;padding:10px 16px!important;justify-content:flex-start!important}
   .footer-benefit + .footer-benefit::before{display:none!important}
-  .footer-benefit{padding:12px 18px!important}
 }
-/* Mobile: keep 2 compact columns */
+/* Mobile: still two per row but compact */
 @media(max-width:768px){
-  .footer-benefits{padding:14px 0!important}
-  .footer-benefit{gap:10px!important;padding:9px 10px!important}
+  .footer-benefits{padding:12px 0!important}
+  .footer-benefits__grid{gap:4px 0!important}
+  .footer-benefit{flex:1 1 45%!important;min-width:150px!important;gap:9px!important;padding:8px 10px!important}
   .footer-benefit__icon{width:38px!important;height:38px!important;border-radius:10px!important}
   .footer-benefit__icon svg{width:18px!important;height:18px!important}
   .footer-benefit__text strong{font-size:0.72rem!important}
-  .footer-benefit__text span{font-size:0.64rem!important}
+  .footer-benefit__text span{font-size:0.63rem!important}
 }
-@media(max-width:380px){
-  .footer-benefits__grid{grid-template-columns:1fr!important}
+@media(max-width:430px){
+  .footer-benefit{flex:1 1 100%!important;justify-content:flex-start!important;padding:7px 18px!important}
 }
 
 /* ================================================================
@@ -4141,12 +4134,12 @@ body:has(#gokwik-iframe) .product-info__cta-group{display:none!important}
     padding: 0 20px !important;
     font-size: 0.75rem !important;
     letter-spacing: 0.1em !important;
-    border-radius: 8px !important;
+    border-radius: var(--bwk-btn-radius) !important;
     white-space: nowrap !important;
   }
   /* Wishlist button: round up the borders to match new radius */
   .pdp-cta-wish {
-    border-radius: 8px !important;
+    border-radius: var(--bwk-btn-radius) !important;
     min-height: 54px !important;
     height: 54px !important;
   }
@@ -5198,3 +5191,112 @@ body.mobile-nav-open .announcement-bar{display:none !important;}
 
 /* Remove Shopify's hCaptcha "protected by" badge container site-wide */
 .shop-hcaptcha-badge-container{display:none !important;}
+
+/* ================================================================
+   ⚡ FLIPKART-INSPIRED REDESIGN LAYER  (2026)
+   ----------------------------------------------------------------
+   Loaded last → wins the cascade. Self-contained: delete this whole
+   block to fully revert to the previous look.
+   Language: blue header, light-grey page with white "floating"
+   cards, blue primary accent, green rating/discount, and the
+   signature yellow (Add to Cart) + orange (Buy Now) CTAs.
+   ================================================================ */
+:root{
+  --fk-blue:#2874f0;
+  --fk-blue-dark:#1c5fd0;
+  --fk-yellow:#ff9f00;      /* Add to Cart */
+  --fk-orange:#fb641e;      /* Buy Now */
+  --fk-green:#388e3c;       /* ratings / discount */
+  --fk-page:#f1f3f6;        /* page background */
+  --fk-card:#ffffff;
+  --fk-ink:#212121;
+  --fk-muted:#878787;
+  --fk-line:#e0e0e0;
+
+  /* Re-point the brand accent → Flipkart blue (recolours buttons,
+     links, badges, tabs, eyebrows, quick-add, active states site-wide) */
+  --color-accent:#2874f0!important;
+  --color-accent-dark:#1c5fd0!important;
+  --color-accent-rgb:40,116,240!important;
+  --color-heading:#212121!important;
+  --color-text:#212121!important;
+  --color-text-muted:#878787!important;
+  --color-border:#e0e0e0!important;
+  --color-surface:#f1f3f6!important;
+  --bwk-radius:8px;
+  --bwk-btn-radius:6px;
+}
+
+/* ---- PAGE: light-grey canvas so white modules float ---- */
+body{background:var(--fk-page)!important}
+::selection{background:var(--fk-blue);color:#fff}
+::-moz-selection{background:var(--fk-blue);color:#fff}
+
+/* ---- HEADER: Flipkart blue bar ---- */
+.site-header__inner{background:var(--fk-blue)!important;border-bottom:none!important;box-shadow:0 1px 3px rgba(0,0,0,0.16)!important}
+.announcement-bar{background:var(--fk-blue-dark)!important;color:#fff!important}
+.site-header__logo .logo-text,
+.site-header__logo[data-logo-text]{color:#fff!important}
+.site-header__mainnav .site-header__nav-link,
+.site-header__mainnav .nav-link__text{color:#fff!important;font-weight:600!important}
+.site-header__mainnav .site-header__nav-link:hover,
+.site-header__mainnav .site-header__nav-link.active{color:#fff!important;opacity:1!important}
+.site-header__mainnav .site-header__nav-link.active .nav-link__text{box-shadow:inset 0 -2px 0 #fff}
+.site-header__actions a,
+.site-header__actions button{color:#fff!important}
+.site-header__actions svg{stroke:#fff!important}
+.site-header__actions svg[fill]:not([fill="none"]){fill:#fff!important;stroke:none!important}
+.cart-count{background:var(--fk-yellow)!important;color:#212121!important}
+/* Search box → white pill inside the blue bar */
+.header-search,
+.header-search__form{background:#fff!important;border-radius:6px!important;box-shadow:0 1px 4px rgba(0,0,0,0.08)!important}
+.header-search__input{background:#fff!important;color:#212121!important}
+.header-search__input::placeholder{color:#a0a0a0!important}
+
+/* ---- PRIMARY BUTTONS → Flipkart blue ---- */
+.btn--primary{background:var(--fk-blue)!important;border-color:var(--fk-blue)!important;color:#fff!important}
+.btn--primary:hover{background:var(--fk-blue-dark)!important;border-color:var(--fk-blue-dark)!important}
+.btn--secondary{color:var(--fk-blue)!important;border-color:var(--fk-blue)!important}
+.btn--secondary:hover{background:var(--fk-blue)!important;color:#fff!important}
+.product-card__quick-add-btn{background:var(--fk-blue)!important}
+.product-card__quick-add-btn:hover{background:var(--fk-blue-dark)!important}
+
+/* ---- PRODUCT CARD → white, lifts off the grey page ---- */
+.product-card{background:var(--fk-card)!important;border:1px solid transparent!important;box-shadow:0 1px 3px rgba(0,0,0,0.08)!important;overflow:hidden!important;transition:box-shadow .2s ease,transform .2s ease!important}
+.product-card:hover{box-shadow:0 6px 20px rgba(0,0,0,0.14)!important;transform:translateY(-3px)!important;border-color:transparent!important}
+.product-card__media-wrap{border-radius:0!important;background:#fff!important}
+.product-card__info{padding:10px 12px 14px!important}
+/* Green rating pill (Flipkart-style) */
+.product-card__rating-pill{background:var(--fk-green)!important;color:#fff!important;border-radius:4px!important;font-weight:700!important;box-shadow:none!important}
+.product-card__rating-pill svg{fill:#fff!important}
+.product-card__rating-pill-divider,.product-card__rating-pill-count{color:rgba(255,255,255,0.85)!important}
+/* Discount % in green, MRP struck through, price bold */
+.product-card__pct-off{color:var(--fk-green)!important;font-weight:700!important;background:none!important;padding:0!important}
+.product-card__price--sale,.product-card__price{color:#212121!important;font-weight:700!important}
+.product-card__price--compare{color:#878787!important}
+.product-card__badge--sale{background:var(--fk-orange)!important}
+.product-card__badge--new{background:var(--fk-green)!important}
+
+/* ---- PDP CTAs → yellow (Add to Cart) + orange (Buy Now) ---- */
+.product-info__cta-desktop .btn--primary,
+.product-info__add-to-cart .btn{background:var(--fk-yellow)!important;border-color:var(--fk-yellow)!important;color:#212121!important}
+.product-info__cta-desktop .btn--primary:hover,
+.product-info__add-to-cart .btn:hover{background:#f59300!important;border-color:#f59300!important;color:#212121!important}
+.product-info__cta-desktop .btn--buy-now,
+.btn--buy-now{background:var(--fk-orange)!important;border-color:var(--fk-orange)!important;color:#fff!important}
+.product-info__cta-desktop .btn--buy-now:hover,
+.btn--buy-now:hover{background:#e85513!important;border-color:#e85513!important;color:#fff!important}
+
+/* ---- CART / WISHLIST drawer checkout → orange (Flipkart "Place Order") ---- */
+.cart-drawer__footer .btn{background:var(--fk-orange)!important;color:#fff!important}
+.cart-drawer__footer .btn:hover{background:#e85513!important}
+
+/* ---- Section eyebrows / tabs already follow --color-accent (now blue) ---- */
+.section-header__subtitle{background:rgba(40,116,240,0.08)!important;border-color:rgba(40,116,240,0.22)!important;color:var(--fk-blue)!important}
+
+/* ---- Footer accents → blue ---- */
+.site-footer a:hover{color:var(--fk-blue)!important}
+
+/* ---- Bottom nav (mobile) active → blue ---- */
+.bottom-nav__item.active{color:var(--fk-blue)!important}
+.bottom-nav__item.active::before{background:var(--fk-blue)!important}

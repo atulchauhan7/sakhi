@@ -1,0 +1,290 @@
+/* ==================================================================
+   SAKHIYAAN — EDITORIAL LUXE-ETHNIC LAYER  (premium fashion redesign)
+   Loaded LAST so it wins the cascade. This is a structural restyle, not
+   a recolour: minimal gallery header, image-forward product cards with
+   hover quick-shop, editorial section composition, warm ivory canvas,
+   espresso ink, terracotta accent, Fraunces display serif + Jost sans.
+   Reference mood: Nicobar / Jaypore / Aritzia / & Other Stories.
+   ================================================================== */
+
+:root{
+  /* Brand colour coding — matches sakhiyaan.com (red on white) */
+  --color-accent:#DB1A1A;
+  --color-accent-dark:#971212;
+  --color-accent-rgb:219,26,26;
+
+  /* Typefaces — editorial pairing (premium feel on the brand palette) */
+  --font-heading:'Fraunces','Cormorant Garamond',Georgia,serif;
+  --font-body:'Jost','Inter',system-ui,-apple-system,sans-serif;
+  --font-display:'Fraunces','Cormorant Garamond',Georgia,serif;
+
+  /* Brand palette: crisp white canvas, ink text, signature red accent */
+  --lx-paper:#ffffff;        /* white canvas (brand) */
+  --lx-paper-2:#f7f5f3;      /* soft off-white — alternating sections */
+  --lx-card:#f4f1ee;         /* product image backdrop */
+  --lx-ink:#1a1a1a;          /* near-black text/headlines (brand) */
+  --lx-ink-2:#5f5a57;        /* secondary */
+  --lx-ink-3:#8c8782;        /* meta */
+  --lx-accent:#DB1A1A;       /* signature red */
+  --lx-accent-deep:#971212;
+  --lx-gold:#b53026;         /* muted brand-red detail (eyebrows) */
+  --lx-line:#ececec;         /* hairline */
+  --lx-line-2:#dcdcdc;
+  --lx-shadow:0 18px 50px rgba(26,26,26,0.10);
+  --ease-lx:cubic-bezier(0.22,1,0.36,1);
+}
+
+/* ------------------------------------------------------------------
+   1. CANVAS & BASE TYPOGRAPHY
+   ------------------------------------------------------------------ */
+body{
+  background:var(--lx-paper)!important;
+  color:var(--lx-ink)!important;
+  font-family:var(--font-body)!important;
+  font-weight:400!important;
+  letter-spacing:0.005em!important;
+  -webkit-font-smoothing:antialiased;
+}
+/* Sections: full-width on the ivory canvas, generous editorial rhythm.
+   (No white cards — products & content breathe on the paper.) */
+.section{
+  background:transparent!important;
+  box-shadow:none!important;border-radius:0!important;border:none!important;
+  max-width:none!important;
+  margin:0 auto!important;
+  padding:clamp(3rem,2rem+4vw,6.5rem) 0!important;
+}
+.section .container,.bwk-section__head,.section-header,.tabbed-collections__header{max-width:1360px}
+.section.image-banners,.section--no-padding{padding:0!important}
+/* Alternating sand surfaces for editorial cadence */
+.tabbed-collections,.image-with-text,.savings-corner-section,.usp-section{background:var(--lx-paper-2)!important}
+.newsletter,.site-footer{margin:0!important;border-radius:0!important}
+
+h1,h2,h3,h4{font-family:var(--font-heading)!important;color:var(--lx-ink)!important;font-weight:400!important;letter-spacing:-0.01em!important;text-transform:none!important}
+
+/* Editorial section headings: centred, serif, with a small eyebrow */
+.bwk-section__head,.section-header,.tabbed-collections__header{
+  text-align:center!important;margin-bottom:clamp(1.6rem,1rem+2vw,3rem)!important;
+}
+.bwk-section__title,.section-header__title{
+  font-family:var(--font-display)!important;font-weight:400!important;
+  font-size:clamp(1.7rem,1.2rem+2.2vw,3rem)!important;line-height:1.08!important;
+  letter-spacing:-0.015em!important;color:var(--lx-ink)!important;
+}
+.bwk-section__title-suffix{font-style:italic!important;color:var(--lx-accent)!important;font-weight:400!important}
+.bwk-section__head::before,.section-header::before{
+  content:'\2014  T H E   E D I T  \2014';letter-spacing:0.32em;font-family:var(--font-body);
+  font-size:0.6rem;font-weight:600;color:var(--lx-gold);display:block;margin-bottom:0.85rem;text-transform:uppercase;
+}
+.section-header__subtitle{font-family:var(--font-body)!important;text-transform:uppercase!important;letter-spacing:0.28em!important;font-size:0.62rem!important;font-weight:600!important;color:var(--lx-gold)!important;background:none!important;border:none!important}
+.bwk-section__link,.section-header__link,.view-all,[data-view-all]{
+  font-family:var(--font-body)!important;color:var(--lx-ink)!important;font-weight:500!important;font-size:0.7rem!important;
+  text-transform:uppercase!important;letter-spacing:0.18em!important;border-bottom:1px solid var(--lx-ink)!important;padding-bottom:3px!important;
+}
+
+/* ------------------------------------------------------------------
+   2. HEADER — minimal ivory gallery header (no marketplace search bar)
+   ------------------------------------------------------------------ */
+/* Announcement belt — thin espresso bar with cream type (overrides stray Flipkart-blue remnant) */
+.announcement-bar,.announcement-bar--belt{background:var(--lx-ink)!important;color:var(--lx-paper)!important;font-family:var(--font-body)!important;letter-spacing:0.2em!important;font-size:0.6rem!important;font-weight:500!important}
+.announcement-bar--timer{background:var(--lx-ink)!important;box-shadow:none!important}
+.announcement-bar__link{color:var(--lx-paper)!important}
+.announcement-bar__marquee a,.announcement-bar__marquee span{color:var(--lx-paper)!important}
+.site-header,.site-header__inner{background:var(--lx-paper)!important;box-shadow:none!important}
+.site-header{border-bottom:1px solid var(--lx-line)!important}
+.site-header__inner{gap:clamp(14px,3vw,40px)!important;align-items:center!important;padding-top:14px!important;padding-bottom:14px!important}
+.site-header__searchbar{display:none!important}     /* drop the big marketplace pill */
+.header-icon--mobile-search{display:inline-flex!important}  /* use a refined search icon instead */
+.site-header__logo .logo-text,.logo-text{
+  font-family:var(--font-display)!important;color:var(--lx-ink)!important;font-weight:500!important;
+  letter-spacing:0.16em!important;text-transform:uppercase!important;font-size:1.35rem!important;font-style:normal!important;
+}
+.site-header__brand .menu-toggle,.site-header__actions .header-icon{color:var(--lx-ink)!important}
+.site-header__actions .header-icon:hover{color:var(--lx-accent)!important}
+.cart-count,.wishlist-count-badge{background:var(--lx-accent)!important;color:#fff!important;border:2px solid var(--lx-paper)!important;font-family:var(--font-body)!important;font-weight:600!important}
+
+/* Category bar = centred editorial nav (no base CSS existed; provide layout) */
+.site-header__catbar{background:var(--lx-paper)!important;box-shadow:none!important;border-bottom:1px solid var(--lx-line)!important}
+.site-header__catbar-inner{
+  display:flex!important;align-items:center!important;justify-content:center!important;flex-wrap:nowrap!important;
+  gap:clamp(14px,2.4vw,38px)!important;max-width:1360px!important;margin:0 auto!important;
+  padding:0 clamp(16px,4vw,40px)!important;height:48px!important;overflow-x:auto!important;scrollbar-width:none!important;
+}
+.site-header__catbar-inner::-webkit-scrollbar{display:none!important}
+.site-header__catbar .nav-item{position:static!important;display:flex!important;align-items:center!important;height:100%!important;flex:0 0 auto!important}
+.site-header__catbar .site-header__nav-link{
+  display:flex!important;align-items:center!important;gap:5px!important;height:100%!important;padding:0!important;
+  font-family:var(--font-body)!important;color:var(--lx-ink)!important;font-weight:500!important;font-size:0.72rem!important;
+  letter-spacing:0.14em!important;text-transform:uppercase!important;white-space:nowrap!important;border:none!important;
+}
+.site-header__catbar .site-header__nav-link:hover,.site-header__catbar .site-header__nav-link.active{color:var(--lx-accent)!important}
+.site-header__catbar .nav-link__text::after{display:none!important}
+/* Open on hover (desktop) as well as click */
+.site-header__catbar .nav-item.is-open .mega-menu,.mega-menu.open,
+.site-header__catbar .nav-item:hover .mega-menu{opacity:1!important;visibility:visible!important;transform:translateY(0)!important}
+.mega-menu{background:var(--lx-paper)!important;border-top:1px solid var(--lx-line)!important;box-shadow:var(--lx-shadow)!important;padding:clamp(2rem,1rem+2vw,3rem) 0!important}
+.mega-menu__grid--shop{
+  display:grid!important;grid-template-columns:1fr 1fr 1.5fr!important;gap:clamp(28px,4vw,72px)!important;
+  max-width:1100px!important;margin:0 auto!important;padding:0 clamp(20px,4vw,40px)!important;align-items:start!important;
+}
+.mega-menu__column{display:flex!important;flex-direction:column!important;gap:11px!important}
+.mega-menu__column-title{font-family:var(--font-body)!important;color:var(--lx-ink-3)!important;font-weight:600!important;font-size:0.64rem!important;letter-spacing:0.2em!important;text-transform:uppercase!important;margin-bottom:6px!important}
+.mega-menu__link{font-family:var(--font-display)!important;color:var(--lx-ink)!important;font-size:1.02rem!important;font-weight:400!important;letter-spacing:0!important;transition:color .25s ease,padding-left .25s ease!important}
+.mega-menu__link:hover{color:var(--lx-accent)!important;padding-left:6px!important}
+/* Featured image tile inside the mega-menu */
+.mega-menu__feature{position:relative!important;display:block!important;overflow:hidden!important;border-radius:6px!important;aspect-ratio:16/11!important;text-decoration:none!important}
+.mega-menu__feature img{width:100%!important;height:100%!important;object-fit:cover!important;transition:transform .8s var(--ease-lx)!important}
+.mega-menu__feature:hover img{transform:scale(1.05)!important}
+.mega-menu__feature-cap{position:absolute!important;left:0;right:0;bottom:0!important;padding:18px 20px!important;display:flex!important;flex-direction:column!important;gap:3px!important;background:linear-gradient(transparent,rgba(26,26,26,0.62))!important;color:#fff!important}
+.mega-menu__feature-eyebrow{font-family:var(--font-body)!important;font-size:0.58rem!important;letter-spacing:0.22em!important;text-transform:uppercase!important;opacity:0.92}
+.mega-menu__feature-title{font-family:var(--font-display)!important;font-size:1.3rem!important;line-height:1.1}
+.mega-menu__feature-cta{font-family:var(--font-body)!important;font-size:0.68rem!important;letter-spacing:0.1em!important;text-transform:uppercase!important;margin-top:3px}
+
+/* ------------------------------------------------------------------
+   3. HERO — immersive editorial
+   ------------------------------------------------------------------ */
+.hero-slider,.hero-slide{box-shadow:none!important;border-radius:0!important}
+.hero-slide__overlay{background:linear-gradient(180deg,rgba(20,16,12,0.05),rgba(20,16,12,0.42))!important}
+.hero-slide__subtitle{font-family:var(--font-body)!important;text-transform:uppercase!important;letter-spacing:0.34em!important;font-size:0.68rem!important;font-weight:500!important;color:#fff!important}
+.hero-slide__title{font-family:var(--font-display)!important;font-weight:400!important;font-size:clamp(2.6rem,1.6rem+4.4vw,5.5rem)!important;line-height:1.02!important;letter-spacing:-0.02em!important;text-transform:none!important;color:#fff!important}
+.hero-slide__btn{font-family:var(--font-body)!important;text-transform:uppercase!important;letter-spacing:0.2em!important;font-size:0.72rem!important;border-radius:0!important;background:var(--lx-paper)!important;color:var(--lx-ink)!important;border:none!important;padding:16px 38px!important}
+.hero-slide__btn:hover{background:var(--lx-accent)!important;color:#fff!important}
+
+/* ------------------------------------------------------------------
+   4. CATEGORY STRIP — refined arch tiles
+   ------------------------------------------------------------------ */
+.category-strip__track{display:flex!important;gap:clamp(14px,2.4vw,34px)!important;overflow-x:auto!important;scroll-snap-type:x proximity!important;padding:6px 2px 14px!important;scrollbar-width:none!important;justify-content:center!important}
+.category-strip__track::-webkit-scrollbar{display:none!important}
+.category-strip__item{flex:0 0 auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;gap:12px!important;text-decoration:none!important;width:clamp(86px,15vw,128px)!important;scroll-snap-align:start!important}
+.category-strip__img-wrap{
+  width:clamp(80px,14vw,118px)!important;height:clamp(104px,18vw,150px)!important;
+  border-radius:999px 999px 6px 6px!important;          /* soft arch — ethnic motif */
+  overflow:hidden!important;background:var(--lx-card)!important;border:1px solid var(--lx-line)!important;box-shadow:none!important;
+  transition:transform .5s var(--ease-lx),box-shadow .5s var(--ease-lx)!important;
+}
+.category-strip__item:hover .category-strip__img-wrap{transform:translateY(-5px)!important;box-shadow:var(--lx-shadow)!important}
+.category-strip__img-wrap img{width:100%!important;height:100%!important;object-fit:cover!important}
+.category-strip__label{font-family:var(--font-body)!important;font-size:0.72rem!important;font-weight:500!important;letter-spacing:0.1em!important;text-transform:uppercase!important;color:var(--lx-ink)!important;text-align:center!important}
+.category-strip__item:hover .category-strip__label{color:var(--lx-accent)!important}
+
+/* ------------------------------------------------------------------
+   5. PRODUCT CARDS — image-forward, gallery style, hover quick-shop
+   ------------------------------------------------------------------ */
+.product-card{
+  background:transparent!important;border:none!important;border-radius:0!important;box-shadow:none!important;
+  transition:none!important;overflow:visible!important;
+}
+.product-card:hover{transform:none!important;box-shadow:none!important}
+.product-card__media-wrap{
+  background:var(--lx-card)!important;border-radius:4px!important;overflow:hidden!important;
+  aspect-ratio:3/4!important;position:relative!important;
+}
+.product-card__media,.product-card__image{height:100%!important;width:100%!important;object-fit:cover!important}
+.product-card__image{transition:opacity .7s var(--ease-lx),transform 1.1s var(--ease-lx)!important}
+.product-card:hover .product-card__image{transform:scale(1.045)!important}
+.product-card:hover .product-card__image--hover{opacity:1!important}
+/* Minimal badge — small serif word, no loud chip */
+.product-card__badge{background:transparent!important;color:var(--lx-ink)!important;border:none!important;padding:0!important;
+  font-family:var(--font-body)!important;font-size:0.58rem!important;font-weight:600!important;letter-spacing:0.16em!important;text-transform:uppercase!important;top:14px!important;left:14px!important}
+.product-card__badge--sale{color:var(--lx-accent)!important}
+.product-card__rating-pill{background:rgba(255,255,255,0.9)!important;color:var(--lx-ink)!important;border-radius:2px!important;font-family:var(--font-body)!important;font-weight:600!important;backdrop-filter:blur(4px)!important}
+.product-card__rating-pill svg{fill:var(--lx-gold)!important}
+/* Wishlist — subtle */
+.product-card__wishlist-img,.product-card__wishlist{background:rgba(255,255,255,0.85)!important;box-shadow:none!important;border:1px solid var(--lx-line)!important}
+.product-card__wishlist.wishlisted svg,.product-card__wishlist-img.wishlisted svg{fill:var(--lx-accent)!important;stroke:var(--lx-accent)!important}
+/* Quick-shop: hidden, slides up on hover as a slim refined bar */
+.product-card__quick-add{position:absolute!important;left:0!important;right:0!important;bottom:0!important;opacity:0!important;transform:translateY(100%)!important;transition:opacity .4s var(--ease-lx),transform .4s var(--ease-lx)!important;padding:0!important;margin:0!important;z-index:3!important}
+.product-card:hover .product-card__quick-add{opacity:1!important;transform:translateY(0)!important}
+.product-card__quick-add-btn{
+  width:100%!important;background:rgba(42,36,32,0.92)!important;color:#fff!important;border:none!important;border-radius:0!important;
+  font-family:var(--font-body)!important;font-weight:500!important;font-size:0.66rem!important;letter-spacing:0.2em!important;text-transform:uppercase!important;
+  padding:13px 0!important;text-indent:0.2em!important;min-height:0!important;backdrop-filter:blur(2px)!important;
+}
+.product-card__quick-add-btn:hover{background:var(--lx-accent)!important}
+.product-card__quick-add-btn svg{display:none!important}
+@media(max-width:768px){.product-card__quick-add{position:static!important;opacity:1!important;transform:none!important;margin-top:8px!important}.product-card__quick-add-btn{background:transparent!important;color:var(--lx-ink)!important;border:1px solid var(--lx-line-2)!important}}
+/* Info block — calm, serif title */
+.product-card__info{background:transparent!important;text-align:center!important;padding:14px 6px 4px!important}
+.product-card__vendor{font-family:var(--font-body)!important;font-size:0.56rem!important;font-weight:600!important;letter-spacing:0.18em!important;text-transform:uppercase!important;color:var(--lx-ink-3)!important;margin-bottom:5px!important}
+.product-card__title{font-family:var(--font-display)!important;font-weight:400!important;font-size:0.98rem!important;line-height:1.3!important;color:var(--lx-ink)!important;letter-spacing:0!important}
+.product-card__price-row{justify-content:center!important;margin-top:6px!important;gap:8px!important}
+.product-card__price,.product-card__price--sale{font-family:var(--font-body)!important;font-weight:500!important;font-size:0.86rem!important;color:var(--lx-ink)!important;letter-spacing:0.02em!important}
+.product-card__price--compare{font-family:var(--font-body)!important;color:var(--lx-ink-3)!important;font-weight:300!important}
+.product-card__pct-off,.product-card__price-off{font-family:var(--font-body)!important;color:var(--lx-accent)!important;font-weight:500!important;font-size:0.72rem!important;letter-spacing:0.04em!important}
+.product-card__swatches{justify-content:center!important}
+.product-card__sizes{display:none!important}   /* keep the card calm; sizes live on hover/PDP */
+
+/* ------------------------------------------------------------------
+   6. BUTTONS — minimal editorial (squared, letter-spaced)
+   ------------------------------------------------------------------ */
+.btn,.btn--primary,.btn--secondary{
+  font-family:var(--font-body)!important;font-weight:500!important;letter-spacing:0.2em!important;text-transform:uppercase!important;
+  font-size:0.7rem!important;border-radius:0!important;text-indent:0.2em!important;padding:16px 36px!important;
+  transition:background .3s var(--ease-lx),color .3s var(--ease-lx),border-color .3s var(--ease-lx)!important;
+}
+.btn--primary{background:var(--lx-ink)!important;color:var(--lx-paper)!important;border:1px solid var(--lx-ink)!important}
+.btn--primary:hover{background:var(--lx-accent)!important;border-color:var(--lx-accent)!important;color:#fff!important;transform:none!important}
+.btn--secondary{background:transparent!important;color:var(--lx-ink)!important;border:1px solid var(--lx-ink)!important}
+.btn--secondary:hover{background:var(--lx-ink)!important;color:var(--lx-paper)!important}
+
+/* PDP CTAs — espresso ADD TO BAG + terracotta BUY NOW */
+.product-info__cta-desktop .btn--primary,.product-info__cta-group .btn--primary,[data-add-to-cart]{
+  background:var(--lx-ink)!important;color:var(--lx-paper)!important;border-color:var(--lx-ink)!important;border-radius:0!important;
+}
+.product-info__cta-desktop .btn--primary:hover,.product-info__cta-group .btn--primary:hover,[data-add-to-cart]:hover{background:#1c1814!important}
+.btn--buy-now,.btn--buy-now-mobile,[data-buy-now]{background:var(--lx-accent)!important;color:#fff!important;border-color:var(--lx-accent)!important;border-radius:0!important}
+.btn--buy-now:hover,.btn--buy-now-mobile:hover,[data-buy-now]:hover{background:var(--lx-accent-deep)!important}
+
+/* ------------------------------------------------------------------
+   7. COLLECTION / LISTING
+   ------------------------------------------------------------------ */
+.collection-page{background:var(--lx-paper)!important}
+.collection-toolbar{background:transparent!important;box-shadow:none!important;border:none!important;border-bottom:1px solid var(--lx-line)!important;border-radius:0!important}
+.collection-toolbar__title{font-family:var(--font-display)!important;font-weight:400!important;font-size:clamp(1.6rem,1.1rem+2vw,2.6rem)!important}
+.collection-toolbar__count{font-family:var(--font-body)!important;color:var(--lx-ink-3)!important;letter-spacing:0.04em!important}
+.collection-breadcrumbs{color:var(--lx-ink-3)!important;font-family:var(--font-body)!important;letter-spacing:0.08em!important;text-transform:uppercase!important;font-size:0.62rem!important}
+.btn-filter-open{border-radius:0!important;border:1px solid var(--lx-ink)!important;background:transparent!important;color:var(--lx-ink)!important}
+.btn-filter-open__badge{background:var(--lx-accent)!important;color:#fff!important}
+.pagination__link{border-radius:0!important;border:1px solid var(--lx-line-2)!important;color:var(--lx-ink)!important;background:transparent!important;font-family:var(--font-body)!important}
+.pagination__link:hover{border-color:var(--lx-ink)!important;color:var(--lx-accent)!important}
+.pagination__link.active{background:var(--lx-ink)!important;border-color:var(--lx-ink)!important;color:var(--lx-paper)!important}
+
+/* ------------------------------------------------------------------
+   8. PRODUCT PAGE (PDP)
+   ------------------------------------------------------------------ */
+.product-info__title,.product-title{font-family:var(--font-display)!important;font-weight:400!important;font-size:clamp(1.6rem,1.1rem+1.8vw,2.6rem)!important;line-height:1.12!important;letter-spacing:-0.01em!important}
+.product-info__price,.product__price,.price__regular{font-family:var(--font-body)!important;font-weight:500!important;color:var(--lx-ink)!important;letter-spacing:0.02em!important}
+.product-info__compare-price{color:var(--lx-ink-3)!important}
+.product-info__discount,.price__badge{color:var(--lx-accent)!important;font-weight:500!important}
+
+/* ------------------------------------------------------------------
+   9. FOOTER — warm espresso
+   ------------------------------------------------------------------ */
+.site-footer{background:#171717!important;color:rgba(248,244,236,0.66)!important}
+.site-footer__heading{font-family:var(--font-body)!important;color:#f8f4ec!important;font-weight:500!important;text-transform:uppercase!important;letter-spacing:0.16em!important;font-size:0.7rem!important}
+.site-footer__link{color:rgba(248,244,236,0.7)!important}
+.site-footer__link:hover{color:var(--lx-gold)!important}
+.site-footer__newsletter-bar,.newsletter{background:var(--lx-paper-2)!important}
+.newsletter .section-header__title,.site-footer__newsletter-title{color:var(--lx-ink)!important}
+.newsletter p,.site-footer__newsletter-text p{color:var(--lx-ink-2)!important}
+.footer-benefits{background:var(--lx-paper-2)!important;border-color:var(--lx-line)!important}
+
+/* ------------------------------------------------------------------
+   10. DRAWERS
+   ------------------------------------------------------------------ */
+.cart-drawer,.wishlist-drawer{background:var(--lx-paper)!important}
+.cart-drawer__title,.wishlist-drawer__title{font-family:var(--font-display)!important;color:var(--lx-ink)!important;font-weight:400!important}
+.cart-drawer__footer .btn,.cart-drawer__checkout,.wishlist-drawer__btn--primary{background:var(--lx-ink)!important;color:var(--lx-paper)!important;border-radius:0!important}
+.free-ship-bar__fill,.cart-drawer__progress-fill{background:var(--lx-accent)!important}
+
+/* ------------------------------------------------------------------
+   11. GLOBAL POLISH
+   ------------------------------------------------------------------ */
+::selection{background:rgba(181,83,42,0.18)}
+:focus-visible{outline:2px solid var(--lx-accent)!important;outline-offset:2px!important}
+.container{max-width:1360px!important}
+
+@media(max-width:768px){
+  .section{padding:2.25rem 0!important}
+  .bwk-section__head::before,.section-header::before{letter-spacing:0.2em}
+}

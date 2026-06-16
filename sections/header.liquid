@@ -24,8 +24,38 @@
     </a>
   </div>
 
-  <!-- CENTER: Desktop Inline Navigation -->
-  <nav class="site-header__mainnav" role="navigation" aria-label="Main navigation">
+  <!-- CENTER: Flipkart-style always-visible search bar -->
+  <form action="{{ routes.search_url }}" method="get" role="search" class="site-header__searchbar">
+    <input type="hidden" name="type" value="product">
+    <button type="submit" class="site-header__searchbar-btn" aria-label="Search">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    </button>
+    <input type="search" name="q" class="site-header__searchbar-input" placeholder="Search for kurtis, co-ords, suit sets and more" autocomplete="off" aria-label="Search products">
+  </form>
+
+  <!-- RIGHT: Action Icons -->
+  <div class="site-header__actions">
+    <a href="{{ routes.search_url }}" class="header-icon header-icon--mobile-search" aria-label="Search" data-search-trigger>
+      <i class="ri-search-line"></i>
+    </a>
+    <a href="{{ routes.account_url }}" class="header-icon header-icon--desktop-only" aria-label="Account">
+      <i class="ri-user-line"></i>
+    </a>
+    <button class="header-icon" data-wishlist-trigger aria-label="Wishlist">
+      <i class="ri-heart-line"></i>
+      <span class="wishlist-count-badge" style="display:none;"></span>
+    </button>
+    <button class="header-icon" data-cart-trigger aria-label="Cart">
+      <i class="ri-shopping-bag-line"></i>
+      <span class="cart-count">{{ cart.item_count }}</span>
+    </button>
+  </div>
+
+</div>
+
+<!-- SECONDARY: Flipkart-style white category bar -->
+<nav class="site-header__catbar" role="navigation" aria-label="Main navigation">
+  <div class="site-header__catbar-inner">
     {% assign _desk_links = linklists[section.settings.menu].links %}
     {% if _desk_links.size > 0 %}
       {% for link in _desk_links %}
@@ -60,40 +90,28 @@
       </div>
       {% endfor %}
     {% else %}
-      {% comment %} Fallback hardcoded desktop nav {% endcomment %}
-      {% assign _fallback_nav = 'Home,/|Summer Sale,/collections/best-seller|New Arrival,/collections/new-arrival|Best Seller,/collections/best-seller|Suit Sets,/collections/suit-sets|Kurta Sets,/collections/kurta-sets|Co-ord Sets,/collections/co-ord-sets|KARIGARI,/collections/embroidery|Our Story,/pages/our-story|Return and Exchange Policy,/pages/return-and-exchange-policy' | split: '|' %}
+      {% comment %} Fallback nav — category items carry a premium shop mega-menu {% endcomment %}
+      {% capture _mega_toggle %}event.preventDefault();event.stopPropagation();var ni=this.closest('.nav-item'),mg=ni.querySelector('.mega-menu');if(!mg)return;var wasOpen=ni.classList.contains('is-open');document.querySelectorAll('.nav-item').forEach(function(o){o.classList.remove('is-open');var m=o.querySelector('.mega-menu');if(m)m.classList.remove('open');var a=o.querySelector('.site-header__nav-link[data-nav-parent]');if(a)a.setAttribute('aria-expanded','false');var ar=o.querySelector('.nav-arrow');if(ar)ar.style.transform=''});if(!wasOpen){ni.classList.add('is-open');mg.classList.add('open');this.setAttribute('aria-expanded','true');var aw=this.querySelector('.nav-arrow');if(aw)aw.style.transform='rotate(180deg)'}{% endcapture %}
+      {% comment %} title | url | has_mega (1/0) {% endcomment %}
+      {% assign _fallback_nav = 'Home,/,0|New In,/collections/new-arrival,0|Kurta Sets,/collections/kurta-sets,1|Suit Sets,/collections/suit-sets,1|Co-ord Sets,/collections/co-ord-sets,1|Farshi Salwar,/collections/farshi-salwar-set,0|KARIGARI,/collections/embroidery,1|Sale,/collections/summer-bloom-26,0|Our Story,/pages/our-story,0' | split: '|' %}
       {% for _item in _fallback_nav %}
         {% assign _parts = _item | split: ',' %}
         {% assign _title = _parts[0] %}
         {% assign _url   = _parts[1] %}
+        {% assign _mega  = _parts[2] %}
         <div class="nav-item">
-          <a href="{{ _url }}" class="site-header__nav-link {% if request.path == _url %}active{% endif %}" {% if _url contains '/collections/' %}data-nav-collection-handle="{{ _url | split: '/collections/' | last | split: '?' | first | split: '/' | first }}"{% endif %}>
+          <a href="{{ _url }}" class="site-header__nav-link {% if request.path == _url %}active{% endif %}"
+             {% if _url contains '/collections/' %}data-nav-collection-handle="{{ _url | split: '/collections/' | last | split: '?' | first | split: '/' | first }}"{% endif %}
+             {% if _mega == '1' %}data-nav-parent="true" aria-haspopup="true" aria-expanded="false" onclick="{{ _mega_toggle }}"{% endif %}>
             <span class="nav-link__text">{{ _title }}</span>
+            {% if _mega == '1' %}<svg class="nav-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>{% endif %}
           </a>
+          {% if _mega == '1' %}{% render 'mega-menu-shop' %}{% endif %}
         </div>
       {% endfor %}
     {% endif %}
-  </nav>
-
-  <!-- RIGHT: Action Icons -->
-  <div class="site-header__actions">
-    <a href="{{ routes.search_url }}" class="header-icon" aria-label="Search" data-search-trigger>
-      <i class="ri-search-line"></i>
-    </a>
-    <a href="{{ routes.account_url }}" class="header-icon header-icon--desktop-only" aria-label="Account">
-      <i class="ri-user-line"></i>
-    </a>
-    <button class="header-icon" data-wishlist-trigger aria-label="Wishlist">
-      <i class="ri-heart-line"></i>
-      <span class="wishlist-count-badge" style="display:none;"></span>
-    </button>
-    <button class="header-icon" data-cart-trigger aria-label="Cart">
-      <i class="ri-shopping-bag-line"></i>
-      <span class="cart-count">{{ cart.item_count }}</span>
-    </button>
   </div>
-
-</div>
+</nav>
 
 <!-- Inline Search Bar -->
 <div class="header-search" data-header-search>

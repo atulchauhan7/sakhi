@@ -101,12 +101,12 @@
 .quantity-selector input{width:50px;text-align:center;border:none;border-left:1px solid var(--color-border);border-right:1px solid var(--color-border);height:44px;font-weight:600;outline:none;font-size:0.85rem;background:transparent}
 /* Desktop inline CTA */
 .product-info__cta-desktop{display:flex;gap:0.75rem;margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--color-border)}
-.product-info__cta-desktop .btn{flex:1;padding:18px 10px;font-size:0.74rem;letter-spacing:0.12em;display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:6px;font-weight:600}
+.product-info__cta-desktop .btn{flex:1;padding:18px 10px;font-size:0.74rem;letter-spacing:0.12em;display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:var(--bwk-btn-radius,10px);font-weight:600}
 .product-info__cta-desktop .btn--primary{background:#fff;color:var(--color-accent);border:2px solid var(--color-accent)}
 .product-info__cta-desktop .btn--primary:hover{background:var(--color-accent);color:#fff;box-shadow:0 8px 24px rgba(var(--color-accent-rgb),0.2);transform:translateY(-2px)}
 .product-info__cta-desktop .btn--primary svg{transition:transform 0.3s ease}
 .product-info__cta-desktop .btn--primary:hover svg{transform:scale(1.15)}
-.product-info__cta-desktop .btn--buy-now{flex:1;min-width:0;border-radius:6px}
+.product-info__cta-desktop .btn--buy-now{flex:1;min-width:0;border-radius:var(--bwk-btn-radius,10px)}
 .product-info__cta-desktop .btn--buy-now svg{width:16px;height:16px}
 /* Mobile fixed CTA bar — hidden on desktop */
 .product-info__cta-group{position:fixed;bottom:0;left:0;right:0;z-index:99;background:var(--color-background);display:none;flex-direction:row;gap:0.5rem;padding:0.75rem 1rem;padding-bottom:calc(0.75rem + env(safe-area-inset-bottom, 0px));box-shadow:0 -2px 16px rgba(0,0,0,0.08);border-top:2px solid var(--color-accent)}
@@ -114,7 +114,7 @@
 .product-info__add-to-cart{flex:1;margin-bottom:0;min-width:0}
 .product-info__add-to-cart .btn{width:100%;background:#fff;color:var(--color-accent);border:1.5px solid var(--color-accent)}
 .product-info__add-to-cart .btn:hover{background:var(--color-accent);color:#fff;border-color:var(--color-accent)}
-.btn--buy-now{background:var(--color-accent);color:#fff;border:1.5px solid var(--color-accent);flex:1;min-width:0;position:relative;overflow:hidden;border-radius:6px}
+.btn--buy-now{background:var(--color-accent);color:#fff;border:1.5px solid var(--color-accent);flex:1;min-width:0;position:relative;overflow:hidden;border-radius:var(--bwk-btn-radius,10px)}
 .btn--buy-now:hover{background:var(--color-accent-dark);color:#fff;transform:translateY(-2px);box-shadow:0 12px 32px rgba(var(--color-accent-rgb),0.3)}
 .btn--buy-now svg{width:16px;height:16px}
 /* CTA button loading states */

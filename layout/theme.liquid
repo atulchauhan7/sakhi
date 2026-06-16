@@ -12,9 +12,10 @@
 <link rel="dns-prefetch" href="https://fonts.shopifycdn.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"></noscript>
+<!-- Editorial luxe-ethnic pairing: Fraunces (display serif) + Jost (humanist sans) -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Jost:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Jost:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Jost:wght@300;400;500;600&display=swap"></noscript>
 
 <!-- View Transitions API for smooth page transitions -->
 <meta name="view-transition" content="same-origin">
@@ -95,6 +96,7 @@ h1{font-size:clamp(2rem,5vw,3.8rem);font-weight:400;letter-spacing:0.04em}
 {{ 'theme-pages.css'      | asset_url | stylesheet_tag }}
 {{ 'theme-responsive.css' | asset_url | stylesheet_tag }}
 {{ 'theme-overrides.css'  | asset_url | stylesheet_tag }}
+{{ 'theme-premium.css'    | asset_url | stylesheet_tag }}
 
 <!-- Animations CSS loaded async (non-render-blocking) -->
 {{ 'luxe-animations.css' | asset_url | preload_tag: as: 'style' }}

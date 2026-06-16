@@ -1,0 +1,40 @@
+{% comment %}
+  Premium "shop" mega-menu panel for the header category nav.
+  Self-contained (links to real published collections) so subcategories
+  render even when the store navigation menu has no nested items.
+{% endcomment %}
+{%- assign feat = collections['new-arrival'] -%}
+<div class="mega-menu mega-menu--shop">
+  <div class="mega-menu__grid mega-menu__grid--shop">
+
+    <div class="mega-menu__column">
+      <span class="mega-menu__column-title">Shop by Category</span>
+      <a href="/collections/kurta-sets" class="mega-menu__link">Kurta Sets</a>
+      <a href="/collections/suit-sets" class="mega-menu__link">Suit Sets</a>
+      <a href="/collections/co-ord-sets" class="mega-menu__link">Co-ord Sets</a>
+      <a href="/collections/farshi-salwar-set" class="mega-menu__link">Farshi Salwar Set</a>
+      <a href="/collections/bottom-wear" class="mega-menu__link">Bottom Wear</a>
+      <a href="/collections/accessories" class="mega-menu__link">Accessories</a>
+    </div>
+
+    <div class="mega-menu__column">
+      <span class="mega-menu__column-title">The Edit</span>
+      <a href="/collections/new-arrival" class="mega-menu__link">New Arrivals</a>
+      <a href="/collections/best-seller" class="mega-menu__link">Best Sellers</a>
+      <a href="/collections/summer-bloom-26" class="mega-menu__link">Summer Bloom &rsquo;26</a>
+      <a href="/collections/embroidery" class="mega-menu__link">KARIGARI &middot; Embroidery</a>
+    </div>
+
+    <a href="/collections/new-arrival" class="mega-menu__feature">
+      {% if feat.image != blank %}
+        <img src="{{ feat.image | image_url: width: 520 }}" alt="New Arrivals" width="520" height="640" loading="lazy">
+      {% endif %}
+      <span class="mega-menu__feature-cap">
+        <span class="mega-menu__feature-eyebrow">Just In</span>
+        <span class="mega-menu__feature-title">New Arrivals</span>
+        <span class="mega-menu__feature-cta">Shop the latest &rarr;</span>
+      </span>
+    </a>
+
+  </div>
+</div>

@@ -1,0 +1,12 @@
+{
+  "name": "dhirai-theme-tools",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Dev tooling for the dhirai Shopify theme (CSS trimming, etc.)",
+  "scripts": {
+    "purge": "node scripts/purge-css.cjs"
+  },
+  "devDependencies": {
+    "purgecss": "^6.0.0"
+  }
+}
