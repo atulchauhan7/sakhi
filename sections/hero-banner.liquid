@@ -16,8 +16,31 @@
   object-fit: cover;
   object-position: center;
 }
-</style>
 
+/* Remove all zoom/scale animations from hero media */
+.hero-slide__media,
+.hero-slide__media img,
+.hero-slide__media video,
+.hero-slide__img--desktop,
+.hero-slide__img--mobile,
+.hero-slide--active .hero-slide__media,
+.hero-slide--active .hero-slide__media img,
+.hero-slide--active .hero-slide__media video {
+  animation: none !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+/* Kill any named zoom keyframes the theme may define */
+@keyframes hero-zoom-out { from {} to {} }
+@keyframes hero-zoom-in  { from {} to {} }
+@keyframes heroZoom      { from {} to {} }
+@keyframes kenBurns      { from {} to {} }
+@keyframes zoomOut       { from {} to {} }
+@keyframes zoomIn        { from {} to {} }
+@keyframes scaleDown     { from {} to {} }
+@keyframes scaleUp       { from {} to {} }
+</style>
 
 <section class="hero-slider" data-section-id="{{ section.id }}" data-hero-slideshow data-hero-speed="{{ section.settings.slideshow_speed | times: 1000 }}">
 <div class="hero-slider__viewport">
