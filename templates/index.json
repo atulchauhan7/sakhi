@@ -12,16 +12,31 @@
     "hero": {
       "type": "hero-banner",
       "blocks": {
+        "slide_i3yjBC": {
+          "type": "slide",
+          "settings": {
+            "image_desktop": "shopify://shop_images/desktop.jpg",
+            "image_mobile": "shopify://shop_images/vasrah_banner_1.jpg",
+            "video": "",
+            "subtitle": "",
+            "heading": "",
+            "button_label": "",
+            "button_link": "shopify://collections/all"
+          }
+        },
         "slide_XbWHCH": {
           "type": "slide",
           "settings": {
             "video": "https://cdn.shopify.com/videos/c/o/v/3634c0dbf5ab4e4986acc2b41400e6b7.mp4",
             "subtitle": "",
-            "heading": ""
+            "heading": "",
+            "button_label": "",
+            "button_link": ""
           }
         }
       },
       "block_order": [
+        "slide_i3yjBC",
         "slide_XbWHCH"
       ],
       "settings": {
@@ -44,7 +59,9 @@
           "settings": {
             "video": "",
             "subtitle": "",
-            "heading": ""
+            "heading": "",
+            "button_label": "",
+            "button_link": ""
           }
         },
         "slide_fcn7LP": {
@@ -52,7 +69,9 @@
           "settings": {
             "video": "",
             "subtitle": "",
-            "heading": ""
+            "heading": "",
+            "button_label": "",
+            "button_link": ""
           }
         },
         "slide_Y4p44x": {
@@ -60,7 +79,9 @@
           "settings": {
             "video": "",
             "subtitle": "",
-            "heading": ""
+            "heading": "",
+            "button_label": "",
+            "button_link": ""
           }
         }
       },
