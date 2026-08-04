@@ -46,7 +46,7 @@
         "type": "announcement-bar",
         "settings": {
           "show_announcement": true,
-          "text": "Flat 10% Off On Everything",
+          "text": "Flat 10% Off On Everything                  |                 Buy 2 & Get 40% OFF",
           "link": "",
           "timer_end": ""
         }
