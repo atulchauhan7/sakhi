@@ -14,10 +14,9 @@
       "blocks": {
         "slide_i3yjBC": {
           "type": "slide",
-          "disabled": true,
           "settings": {
-            "image_desktop": "shopify://shop_images/desktop.jpg",
-            "image_mobile": "shopify://shop_images/sakhiyaan.jpg",
+            "image_desktop": "shopify://shop_images/2.png",
+            "image_mobile": "shopify://shop_images/MOBILE_SIZE.png",
             "video": "",
             "subtitle": "",
             "heading": "",
